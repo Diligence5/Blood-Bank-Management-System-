@@ -1,0 +1,644 @@
+{
+	"info": {
+		"_postman_id": "bcd84d34-fcdc-40e7-840f-dba4d82465f1",
+		"name": "Virtue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27933143",
+		"_collection_link": "https://martian-rocket-493829.postman.co/workspace/My-Workspace~de674ccc-7ca1-4a49-80e1-cfe275e4c665/collection/27933143-bcd84d34-fcdc-40e7-840f-dba4d82465f1?action=share&source=collection_link&creator=27933143"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"pranitghugare@gamil.com.com\",\n  \"password\": \"1234567890-=\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Shohrab\",\n  \"email\": \"officialshohrab@gmail.com\",\n  \"password\": \"1234567890-=\"\n\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDM5MjY3fQ.vk2gQ6Xi17OISSqqySXRddB4xx32-CuMr0jME8QB0l",
+								"type": "text"
+							},
+							{
+								"key": "User-Id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/pranit/My Docs/My pic.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/upload-profile-image/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"upload-profile-image",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDM5MjY3fQ.vk2gQ6Xi17OISSqqySXRddB4xx32-CuMr0jME8QB0l",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Shohrab\",\n  \"lastName\": \"Khan\",\n  \"email\": \"officialshohrab@gmail.com\",\n  \"mobile\": \"7905396842\",\n  \"password\": \"1234567890-=\",\n  \"gender\": \"Male\",\n  \"bloodGroup\": \"A+\",\n  \"place\": \"Kanpur\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/update-profile/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"update-profile",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blood Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDM5MjY3fQ.vk2gQ6Xi17OISSqqySXRddB4xx32-CuMr0jME8QB0l",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 2,\n  \"blood_group\": \"O+\",\n  \"unit\": 5\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/blood-request",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"blood-request"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donate Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDM5MjY3fQ.vk2gQ6Xi17OISSqqySXRddB4xx32-CuMr0jME8QB0l",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/donate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"donate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDM5MjY3fQ.vk2gQ6Xi17OISSqqySXRddB4xx32-CuMr0jME8QB0l",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/user/userProfile/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"userProfile",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjkyNDM1Njg4LCJleHAiOjE2OTI0MzkyODh9.6L89eFF9gYa1LVaTCmxZVCg__b6S4e5YbLJkff5olDc\",\n  \"newPassword\": \"1234567890-=\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/resetPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"pranitghugare@gmail.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/user/forgotPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"user",
+								"forgotPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Dhanedra\",\n  \"lastName\": \"Sahu\",\n  \"email\": \"dhanedra73984@gmail.com\",\n  \"password\": \"1234567890-=\",\n  \"mobile\": \"7987722893\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/emp/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"pranitghugare@gmail.com\",\n  \"password\": \"1234567890-=\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/emp/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Blood Stock",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/emp/blood-stocks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"blood-stocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blood Stock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"unit\": 40\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/emp/blood-stocks/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"blood-stocks",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Blood Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/emp/bloodRequestList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"bloodRequestList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Serve Blood Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/emp/serveRequest/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"serveRequest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Denying Blood Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/emp/denyRequest/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"denyRequest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Denying Donation Request",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/emp/denyDonationRequest/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"denyDonationRequest",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Donation Requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/emp/donationRequestList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"donationRequestList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Health",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 1,\n  \"vitals\": \"Normal\",\n  \"height\": 175,\n  \"weight\": 70,\n  \"status\": \"Good\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/emp/updateHealth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"updateHealth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Donner Records",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDUyMzU5fQ.ipY15FqiagOdPg87xDUMuFeHgn-YCDiP0nbYl9QRL6o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4000/emp/donnerRecords",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"emp",
+								"donnerRecords"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IlByYW5pdCBHaHVnYXJlIiwiaWF0IjoxNjkyMDM5MjY3fQ.vk2gQ6Xi17OISSqqySXRddB4xx32-CuMr0jME8QB0l",
+			"value": "JWT"
+		}
+	]
+}
